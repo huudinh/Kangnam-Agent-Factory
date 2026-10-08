@@ -1,5 +1,44 @@
 # CHANGELOG — AGENT FACTORY (KANGNAM)
 
+## v2.1 — 08/10/2026 · Nâng Factory lên tầng hệ thống
+
+**Vấn đề của bản 2.0:** Factory có mode *"Hỏi vận hành"* dùng để tra cứu tình huống lẻ — *"khách cho số rồi gọi không nghe là mã gì"*. Đó là **việc của agent con** A1/A2 đã sinh ra. Factory sa vào đó thì vừa làm thay việc agent con, vừa loãng mất thứ nó giỏi nhất: **nhìn toàn hệ**.
+
+**Bản 2.1 định nghĩa lại phạm vi.** Factory trả lời ở **TẦNG HỆ THỐNG** cho kỹ sư dựng hệ, quản lý sản phẩm, người quyết ngân sách — bốn câu hỏi nó phải luôn trả lời được:
+
+| # | Câu hỏi | Mục |
+|---|---|---|
+| ① | Hệ này **làm được gì, không làm gì** | §5 |
+| ② | Hệ **vận hành thế nào** — kiến trúc, state machine, luồng, điểm tích hợp | §7–§9 |
+| ③ | **Đích đến phát triển** tới đâu | **§10 MỚI** |
+| ④ | **Phải giải đề bài nào** để tích hợp được | **§11 MỚI** |
+
+**§5 đổi từ 2 chế độ thành 5:** `NĂNG LỰC` · `KIẾN TRÚC` · `LỘ TRÌNH` · `ĐỀ BÀI` · `SINH AGENT`. Bốn mode đầu là lý do Factory tồn tại.
+
+**§10 MỚI — Đích đến & lộ trình.** Bảng 4 phase kèm **điều kiện mở khoá** từng phase:
+
+| Phase | Làm được gì | Mở khoá khi |
+|---|---|---|
+| **1 Trợ lý rời** *(hiện tại)* | Agent gợi ý, người copy/dán | Đang chạy |
+| **2 Đọc tự động** | Agent đọc hội thoại từ Caresoft, tự gán L và chấm điểm | Có API đọc · chốt nguồn sự thật của L-code · có routing đầy đủ |
+| **3 Ghi có kiểm soát** | Agent ghi tag/điểm ngược vào Caresoft, người duyệt ngoại lệ | P2 ổn định + có benchmark + có rollback |
+| **4 Nhân bản brand** | Dùng lại lõi, chỉ thay module K | Xác nhận lõi thật brand-neutral |
+
+> **Chỉ Phase 1 là đã chốt.** Phase 2–4 là **đề xuất chờ duyệt** — Rule 6c bắt Agent phải nói rõ điều này mỗi lần trình bày, không được nói như việc đã quyết.
+
+**§11 MỚI — 10 đề bài phải giải để tích hợp.** Đây là **danh sách bài toán, không phải danh sách tính năng** — mỗi đề bài nêu vấn đề · vì sao chặn · ai sở hữu. Gồm: nguồn sự thật của L-code · routing còn trống · nội dung KB trống · chống ảo giác số liệu · pháp lý nội dung · đo lường · hạ tầng & quyền · bảo mật dữ liệu khách · lõi có thật brand-neutral · quản trị phiên bản K7.
+
+Mục **Việc còn treo** dưới đây giờ là dữ liệu thiếu; **§11 là bài toán thiết kế** — hai thứ khác nhau, đừng lẫn.
+
+**Thay đổi kèm theo**
+- §1: thêm khối **NGOÀI PHẠM VI** — câu hỏi về một khách cụ thể thì chỉ rõ agent con nào phụ trách rồi **dừng**. Đối tượng đổi từ *"người vận hành"* sang *"kỹ sư dựng hệ, quản lý sản phẩm, người quyết ngân sách"*.
+- §14 định dạng đầu ra: thêm khuôn xuất cho 4 mode mới.
+- §16 Rules: thêm **6b** (không xử lý tình huống khách lẻ) và **6c** (không trình bày Phase 2–4 như đã chốt).
+- `SYSTEM-PROMPT-NGAN.md` viết lại theo khung mới — **7.983 ký tự**, chỉ dư 17 so với hạn mức ChatGPT. **Sửa là phải đếm lại.**
+- Trang hướng dẫn: Bước 2 mở đầu bằng bảng **4 câu hỏi + ranh giới ngoài phạm vi**; 12 câu lệnh bám 5 chế độ, 6 câu đầu ở tầng hệ thống.
+
+---
+
 ## v2.0 — 08/10/2026 · Áp khuôn gói chuẩn
 
 Nội dung chuyên môn **giữ nguyên hoàn toàn**. Gói này vốn đã có `knowledge/` và `templates/` nên chỉ thiếu lớp vỏ: bộ não dạng khối ▼▲, bản ngắn cho ChatGPT, và tài liệu vận hành.
