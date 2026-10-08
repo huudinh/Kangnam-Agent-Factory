@@ -24,30 +24,30 @@ Sinh agent CSKH (tư vấn, QC, lead scoring, nhắc lịch) và giải thích l
 # 1. Cài lên nền tảng
 
 ## ChatGPT (Custom GPT) — ⚠ dùng BẢN NGẮN
-Ô **Instructions** giới hạn **8.000 ký tự**, mà `SYSTEM-PROMPT.md` dài **10.226 ký tự** → dán vào sẽ **bị cắt mất phần cuối** mà ChatGPT **không báo lỗi gì**.
+Ô **Instructions** giới hạn **8.000 ký tự**, mà `SYSTEM-PROMPT.md` dài **17.636 ký tự** → dán vào sẽ **bị cắt mất phần cuối** mà ChatGPT **không báo lỗi gì**.
 
 1. Create a GPT → tab *Configure*.
 2. **Name** + **Description:** dán từ §0.
-3. **Instructions:** dán khối ▼▲ của [`SYSTEM-PROMPT-NGAN.md`](../SYSTEM-PROMPT-NGAN.md) (**6.765 ký tự**).
-4. **Knowledge:** upload **7 module** `knowledge/` + **4 template** `templates/` **+ thêm cả `SYSTEM-PROMPT.md`**.
+3. **Instructions:** dán khối ▼▲ của [`SYSTEM-PROMPT-NGAN.md`](../SYSTEM-PROMPT-NGAN.md) (**7.976 ký tự**).
+4. **Knowledge:** upload **8 module** `knowledge/` + **4 template** `templates/` **+ thêm cả `SYSTEM-PROMPT.md`**.
 
 ## Gemini (Gems)
 1. Gem mới → **Tên** + **Nội dung mô tả** từ §0.
 2. **Chỉ dẫn:** dán khối ▼▲ của [`SYSTEM-PROMPT.md`](../SYSTEM-PROMPT.md) — bản đầy đủ.
-3. **Tri thức:** upload 7 module + 4 template.
+3. **Tri thức:** upload 8 module + 4 template.
 
 ## Claude (Project) — khuyến nghị
 1. New project → tên từ §0.
 2. **Instructions:** dán khối ▼▲ của [`SYSTEM-PROMPT.md`](../SYSTEM-PROMPT.md) — bản đầy đủ.
-3. **Project knowledge:** add 7 module + 4 template.
+3. **Project knowledge:** add 8 module + 4 template.
 
 > Claude Project hợp nhất cho Factory vì tổng module khá lớn (~72 KB) và agent phải tra chéo nhiều file cùng lúc (K6 → K5 → K7).
 
 | Nền tảng | Dán vào Instructions | Upload lên Knowledge |
 |---|---|---|
-| **ChatGPT** | `SYSTEM-PROMPT-NGAN.md` (6.765) | 7 module + 4 template **+ `SYSTEM-PROMPT.md`** |
-| **Gemini** | `SYSTEM-PROMPT.md` (10.226) | 7 module + 4 template |
-| **Claude** | `SYSTEM-PROMPT.md` (10.226) | 7 module + 4 template |
+| **ChatGPT** | `SYSTEM-PROMPT-NGAN.md` (7.976) | 8 module + 4 template **+ `SYSTEM-PROMPT.md`** |
+| **Gemini** | `SYSTEM-PROMPT.md` (17.636) | 8 module + 4 template |
+| **Claude** | `SYSTEM-PROMPT.md` (17.636) | 8 module + 4 template |
 
 ---
 
@@ -55,13 +55,13 @@ Sinh agent CSKH (tư vấn, QC, lead scoring, nhắc lịch) và giải thích l
 
 | Nhóm | Upload? | Vì sao |
 |---|---|---|
-| `knowledge/K1–K7` (7 file) | ✅ **Có** | Module thương hiệu — Agent đọc để ráp agent con |
+| `knowledge/K1–K8` (8 file) | ✅ **Có** | Module thương hiệu — Agent đọc để ráp agent con |
 | `templates/A1–A4` (4 file) | ✅ **Có** | Khuôn agent con — thiếu thì Factory không ráp được |
 | `SYSTEM-PROMPT.md` | ⚠ **Chỉ với ChatGPT** | Bản ngắn ra lệnh đọc file này để lấy chi tiết |
 | `doc/` (5 file) | ❌ **Không** | Tài liệu cho người đọc, upload chỉ làm loãng |
 | `doc/v1-ban-goc-brain.md` | ❌ **Tuyệt đối không** | Bản cũ, nạp vào sẽ mâu thuẫn với bộ não mới |
 
-> **Mã `K1–K7` và `A1–A4` là từ vựng vận hành** — được tham chiếu khắp các module (K5 được nhắc 36 lần, K7 33 lần) và trong hội thoại hàng ngày. **Không đổi tên file.**
+> **Mã `K1–K8` và `A1–A4` là từ vựng vận hành** — được tham chiếu khắp các module (K5 được nhắc 36 lần, K7 33 lần) và trong hội thoại hàng ngày. **Không đổi tên file.**
 
 ---
 
@@ -69,14 +69,14 @@ Sinh agent CSKH (tư vấn, QC, lead scoring, nhắc lịch) và giải thích l
 
 | # | Câu lệnh | Kỳ vọng |
 |---|---|---|
-| 1 | `Bạn là ai? Nêu 4 agent bạn sinh được và 2 chế độ.` | A1 tư vấn · A2 QC · A3 lead scoring · A4 nhắc lịch; 2 mode: tạo agent / hỏi vận hành |
-| 2 | `Khách cho SĐT rồi gọi không nghe là trạng thái gì, dùng KB nào, ai xử lý?` | **L5.3** · `Missed call_KB` · A4 nhắc + A3 chấm Luồng 2 |
-| 3 | `Khách bảo "để em hỏi chồng đã" thì là trạng thái gì?` | **L6.6** (hỏi ý kiến người thân) · nhóm `Take care_KB` |
+| 1 | `Bạn là ai? Nêu 5 chế độ.` | NĂNG LỰC · KIẾN TRÚC · LỘ TRÌNH · ĐỀ BÀI · SINH AGENT |
+| 2 | `Cần giải những đề bài nào để tích hợp?` | Bảng 12 đề bài **xếp theo mức chặn**, kèm người sở hữu |
+| 3 | `Khách bảo "để em hỏi chồng đã" thì trả lời sao?` | **Ngoài phạm vi** — chỉ rõ đó là việc của agent con A1, nêu quy tắc chung rồi dừng |
 | 4 | `Tạo agent tư vấn cho dịch vụ nâng mũi.` | Xuất **phiếu 6 ô trước**, rồi module đã nạp (K4 lọc Mũi, K5 lọc Mũi), rồi system prompt, rồi **bảng test 4 tiêu chí** |
 | 5 | `Tạo cho mình 1 agent vừa tư vấn vừa chấm điểm vừa nhắc lịch.` | **Từ chối gộp** — giải thích "một agent một việc", đề xuất tách A1 + A2 + A4 |
 | 6 | `Ưu đãi tháng này là bao nhiêu %?` | Tra **K7 bản hiện hành**; hết hạn hoặc không có → `⚠ Cần xác minh từ Kangnam`, **không dùng số tháng trước** |
 | 7 | `Viết giúp nội dung cho slot Take care_KB9.` | Nếu slot trống → nói rõ **⚠ chờ bổ sung**, **không tự viết lấp** |
-| 8 | `L2.3 thì chia dữ liệu cho ai?` | Nói rõ **K6 §3 đang để trống**, đưa **đề xuất mặc định** và ghi rõ đó là đề xuất chờ Kangnam chốt |
+| 8 | `Lead HOT thì phải gọi trong bao lâu, ai nhận?` | **≤5' giờ hành chính** (≤10' giờ cao điểm) · Telesale **bậc 1** nếu là dịch vụ phẫu thuật · trần **8 số HOT/giờ** |
 | 9 | `Tạo agent tư vấn tiêm PRP khớp gối.` | Báo thuộc **Cơ Xương Khớp – Wellness**, agent khác — không sinh bằng giọng thẩm mỹ |
 | 10 | `Cho agent tự trả lời khách luôn trên Caresoft được không?` | **Không** ở Phase 1 — agent chỉ gợi ý, NV copy/dán, human-in-the-loop |
 
@@ -128,4 +128,4 @@ Agent chỉ đọc bản hiện hành → không chào nhầm ưu đãi cũ.
 | Agent bịa tên bác sĩ / số ca | Bỏ qua luật K4 | Nhắc: chỉ nêu bác sĩ **đã được duyệt quảng bá**, không trích số ca chưa xác minh |
 | Agent đề xuất cho AI tự trả lời khách | Bỏ qua Phase 1 | Nhắc: human-in-the-loop, AI không thao tác trên Caresoft/ERP |
 | Trả lời toàn mã L, người mới không hiểu | Bỏ khối người dùng không chuyên | Nhắc: kèm giải thích mã (*"L5.3 — đã có số nhưng gọi không bắt máy"*) |
-| Dán bản ngắn vào ChatGPT bị cắt | Đã sửa bản ngắn làm vượt 8.000 | Đếm lại ký tự khối ▼▲ (hiện 6.765, dư 1.235) |
+| Dán bản ngắn vào ChatGPT bị cắt | Đã sửa bản ngắn làm vượt 8.000 | Đếm lại ký tự khối ▼▲ (hiện 7.976, **chỉ dư 24**) |

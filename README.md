@@ -1,8 +1,10 @@
 # 🏭 AGENT FACTORY — Meta-agent sinh agent CSKH (Kangnam)
 
-> Version 2.0 · **Một meta-agent sinh ra 4 agent CSKH**, dùng chung bộ module thương hiệu. Ngoài việc tạo agent, nó còn **trả lời câu hỏi về luồng vận hành** — trạng thái L-code, routing, quy ước KB, handoff.
+> Version 2.2 · **Meta-agent dựng hệ 4 agent CSKH.** Nó trả lời ở **tầng hệ thống** — hệ làm được gì · vận hành thế nào · phát triển tới đâu · phải giải đề bài nào để tích hợp — và sinh ra system prompt cho agent con.
+>
+> **Không xử lý tình huống của một khách cụ thể** — đó là việc của agent con mà nó sinh ra.
 
-Theo công thức HCI **R·M·K·W·O (+Rules)**. Kiến trúc **lõi brand-neutral** ([`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md)) + **module thương hiệu** ([`knowledge/K1–K7`](knowledge/)) + **template agent con** ([`templates/A1–A4`](templates/)) → **đổi brand = đổi module K, không sửa lõi**.
+Theo công thức HCI **R·M·K·W·O (+Rules)**. Kiến trúc **lõi brand-neutral** ([`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md)) + **module thương hiệu** ([`knowledge/K1–K8`](knowledge/)) + **template agent con** ([`templates/A1–A4`](templates/)) → **đổi brand = đổi module K, không sửa lõi**.
 
 ---
 
@@ -22,19 +24,24 @@ AI **không** thao tác trực tiếp trên Caresoft/ERP ở Phase 1: nhân viê
 
 | Agent | Việc | Module nạp |
 |---|---|---|
-| **A1 Tư vấn** (trực page) | Gợi ý nội dung trả lời khách | K1 · K2 · K3 · K4 · K5 · K6 · K7 |
-| **A2 QC** | Chấm điểm, phân loại Hot/Warm, báo lỗi NV, action plan đào tạo | K3 · K5 · K6 (+ rubric trong A2) |
-| **A3 Lead Scoring** | Chấm 2 luồng (hội thoại + cuộc gọi), xếp hạng A/B/C/D | K3 · K5 · K6 (+ tiêu chí trong A3) |
-| **A4 Nhắc lịch** | Sinh lịch nhắc & chăm sóc theo nhịp | K3 (Existing/LTV) · K4 · K5 §7 · K6 |
+| **A1 Tư vấn** (trực page) | Gợi ý nội dung trả lời khách | K1–K7 · **K8 trừ §1** |
+| **A2 QC** | Chấm hội thoại theo **rubric 10 tiêu chí**, báo lỗi NV, action plan đào tạo | K3 · K5 · K6 · **K8 §6 §2 §4** |
+| **A3 Lead Scoring** | Chấm **5 tín hiệu → HOT/WARM/COLD**, gắn SLA tương ứng | K3 · K5 · K6 · **K8 §3 §4** |
+| **A4 Nhắc lịch** | Sinh lịch nhắc theo **chuỗi T+0→T+7** | K3 · K4 · K6 · **K8 §5 §4** |
 
 ---
 
-## Hai chế độ
+## Năm chế độ
 
-| Mode | Khi nào dùng | Đầu ra |
+| Mode | Hỏi gì | Nhận lại |
 |---|---|---|
-| **TẠO AGENT** | *"Tạo agent tư vấn cho dịch vụ nâng mũi"* | Phiếu 6 ô + system prompt agent con chạy được + bảng test 4 tiêu chí |
-| **HỎI VẬN HÀNH** | *"Khách cho số rồi gọi không nghe là trạng thái gì?"* | Trả lời ngắn + trích đúng **L-code** và **mã KB** |
+| **NĂNG LỰC** | *"Hệ này làm được gì?"* | Bản đồ năng lực + ranh giới + agent con nào phụ trách việc nào |
+| **KIẾN TRÚC** | *"Hệ vận hành thế nào?"* | 5 lớp · state machine L1–L6 · luồng đầu–cuối · **điểm tích hợp** |
+| **LỘ TRÌNH** | *"Phát triển tới đâu?"* | Bảng 4 phase + **điều kiện mở khoá** từng phase |
+| **ĐỀ BÀI** | *"Cần giải gì để tích hợp?"* | 12 bài toán + mức chặn + người sở hữu |
+| **SINH AGENT** | *"Tạo agent [loại] cho [X]"* | Phiếu 6 ô → module đã nạp → system prompt → bảng test 4 tiêu chí |
+
+**Bốn mode đầu là lý do Factory tồn tại.** Câu hỏi về một khách cụ thể → Factory chỉ rõ agent con nào phụ trách rồi dừng.
 
 ---
 
@@ -75,16 +82,16 @@ QC gán L-code → Lead Scoring chấm theo L-code → A1 chọn kịch bản th
 
 1. Tạo 1 Project / GPT / Gem mới. Tên và mô tả ngắn: xem [`doc/01-cai-dat.md` §0](doc/01-cai-dat.md).
 2. **Instructions:** dán khối ▼▲ trong [`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md) — riêng **ChatGPT** dùng [`SYSTEM-PROMPT-NGAN.md`](SYSTEM-PROMPT-NGAN.md).
-3. **Knowledge:** upload 7 module trong [`knowledge/`](knowledge/) + 4 template trong [`templates/`](templates/).
+3. **Knowledge:** upload 8 module trong [`knowledge/`](knowledge/) + 4 template trong [`templates/`](templates/).
 4. Ra lệnh tạo agent, hoặc hỏi thẳng câu vận hành.
 
 **Câu lệnh mẫu:**
 ```
-Tạo agent tư vấn cho dịch vụ nâng mũi.
+Để tích hợp hệ này vào vận hành thật, cần giải những đề bài nào?
+Xếp theo mức chặn, nói rõ ai sở hữu từng cái.
 ```
 ```
-Khách cho SĐT rồi gọi không nghe là trạng thái gì, dùng KB nào, ai xử lý?
-→ L5.3 · Missed call_KB · A4 nhắc + A3 chấm Luồng 2
+Tạo agent tư vấn cho dịch vụ nâng mũi. Đưa phiếu 6 ô cho mình duyệt trước.
 ```
 
 ---
@@ -106,12 +113,28 @@ Agent chỉ đọc bản hiện hành → không chào nhầm ưu đãi cũ.
 
 ---
 
+## ⚠️ K8 thay thế một số phần cũ
+
+`K8` là **playbook vận hành thật đang chạy**, nên khi mâu thuẫn với module cũ thì **K8 thắng**:
+
+| Nội dung | Bản cũ | Bản dùng |
+|---|---|---|
+| Phiếu bàn giao | K6 §6 — 8 trường | **K8 §4 — 12 trường** |
+| Rubric chấm hội thoại | A2 — "v1 đề xuất" | **K8 §6 — 10 tiêu chí, chuẩn ≥8/10** |
+| Tiêu chí chấm lead | A3 — "± v1 đề xuất" | **K8 §3 — 5 tín hiệu → HOT/WARM/COLD** |
+
+**Hai trục phân loại, không gộp:** `L-code` = *trạng thái* (L4.1 là thời điểm bàn giao) · `HOT/WARM/COLD` = *mức ưu tiên* (quyết SLA + bậc Telesale). Một lead mang cả hai — thiết kế dữ liệu phải để **hai cột riêng**.
+
+> 🔒 **K8 §1 là dữ liệu nhân sự nội bộ** — đánh giá hiệu suất của người có tên. **Không bao giờ** nhúng vào agent con hay nội dung gửi khách. Chỉ dùng khi trả lời về **đào tạo** và **định tuyến**.
+
+---
+
 ## Tài liệu
 
 | File | Nội dung | Trạng thái |
 |---|---|---|
-| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | Bộ não meta-agent — 15 mục · **10.226 ký tự** | ✅ |
-| [SYSTEM-PROMPT-NGAN.md](SYSTEM-PROMPT-NGAN.md) | Bản ngắn **6.765 ký tự** — chỉ cho **ChatGPT** (ô Instructions giới hạn 8.000) | ✅ |
+| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | Bộ não meta-agent — **17 mục** · **17.636 ký tự** | ✅ |
+| [SYSTEM-PROMPT-NGAN.md](SYSTEM-PROMPT-NGAN.md) | Bản ngắn **7.976 ký tự** — chỉ cho **ChatGPT** · ⚠ **chỉ dư 24 ký tự, sửa phải đo lại** | ✅ |
 | [knowledge/K1-thuong-hieu.md](knowledge/K1-thuong-hieu.md) | Thương hiệu Kangnam — trích yếu cho agent | ✅ |
 | [knowledge/K2-khach-hang.md](knowledge/K2-khach-hang.md) | Chân dung · insight cảm xúc · key tâm lý theo nhóm | ✅ |
 | [knowledge/K3-hanh-vi-trang-thai.md](knowledge/K3-hanh-vi-trang-thai.md) | **Bản đồ 6 giai đoạn ↔ L1–L6 ↔ agent** | ✅ |
@@ -119,18 +142,19 @@ Agent chỉ đọc bản hiện hành → không chào nhầm ưu đãi cũ.
 | [knowledge/K5-kich-ban.md](knowledge/K5-kich-ban.md) | Bank kịch bản · 8 lỗi cấm · 8 quy tắc vàng · luồng 7 bước | ⚠ một số slot KB còn trống |
 | [knowledge/K6-van-hanh.md](knowledge/K6-van-hanh.md) | **Xương sống** — L1–L6 · routing · KB · handoff · điều kiện thoát | ⚠ routing L2.3/L2.4/L5/L6 còn trống |
 | [knowledge/K7-chien-dich-thang.md](knowledge/K7-chien-dich-thang.md) | **HOT-SWAP** — bản hiện tại T10/2026 | 🔄 thay mỗi tháng |
+| [knowledge/K8-nang-luc-kich-ban-ban-giao.md](knowledge/K8-nang-luc-kich-ban-ban-giao.md) | **Playbook vận hành thật** — kịch bản B1–B5 · HOT/WARM/COLD · SLA bàn giao · chuỗi T+0→T+7 · rubric 10 tiêu chí · KPI · năng lực nhân sự | ⚠ §1 là dữ liệu nội bộ |
 | [templates/A1-tu-van-truc-page.md](templates/A1-tu-van-truc-page.md) | Template agent tư vấn | ✅ |
-| [templates/A2-qc.md](templates/A2-qc.md) | Template agent QC + **Rubric v1** | ⚠ rubric chờ duyệt |
-| [templates/A3-lead-scoring.md](templates/A3-lead-scoring.md) | Template agent lead scoring + **bộ tiêu chí ± v1** | ⚠ tiêu chí chờ duyệt |
+| [templates/A2-qc.md](templates/A2-qc.md) | Template agent QC | ⚠ rubric v1 **đã bị K8 §6 thay thế** |
+| [templates/A3-lead-scoring.md](templates/A3-lead-scoring.md) | Template agent lead scoring | ⚠ tiêu chí v1 **đã bị K8 §3 thay thế** |
 | [templates/A4-nhac-lich.md](templates/A4-nhac-lich.md) | Template agent nhắc lịch | ✅ |
 | [doc/01-cai-dat.md](doc/01-cai-dat.md) | Tên & mô tả · cài 3 nền tảng · smoke test · xử lý sự cố | ✅ |
 | [doc/02-cau-lenh.md](doc/02-cau-lenh.md) | Câu lệnh 2 mode · prompt mẫu · điều Agent sẽ từ chối | ✅ |
 | [doc/03-output-mau.md](doc/03-output-mau.md) | Output mẫu cả 2 mode · dấu hiệu đúng/sai | ✅ |
-| [doc/04-prompt-nguoi-moi.md](doc/04-prompt-nguoi-moi.md) | 10 prompt cho nhân viên vận hành | ✅ |
+| [doc/04-prompt-nguoi-moi.md](doc/04-prompt-nguoi-moi.md) | Prompt mẫu | ✅ |
 | [doc/CHANGELOG.md](doc/CHANGELOG.md) | Lịch sử · việc còn treo | ✅ |
 | [doc/v1-ban-goc-brain.md](doc/v1-ban-goc-brain.md) | Bản gốc `00-FACTORY.md` v1.0 — lưu đối chiếu, **không dùng để cài** | 📦 |
 
-> **Quy ước:** mã `K1–K7` và `A1–A4` là **từ vựng vận hành**, được tham chiếu khắp các module và trong hội thoại hàng ngày — **không đổi tên**.
+> **Quy ước:** mã `K1–K8` và `A1–A4` là **từ vựng vận hành**, được tham chiếu khắp các module và trong hội thoại hàng ngày — **không đổi tên**.
 
 ---
 

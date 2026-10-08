@@ -1,5 +1,51 @@
 # CHANGELOG — AGENT FACTORY (KANGNAM)
 
+## v2.2 — 08/10/2026 · Nạp K8 (playbook vận hành thật)
+
+**Thêm `knowledge/K8-nang-luc-kich-ban-ban-giao.md`** — nguồn: *Playbook Trực Page Kangnam Tháng 10*. Đây là **bản vận hành thật đang chạy**, khác với các module trước phần lớn là khung và đề xuất.
+
+**Nội dung K8:** năng lực 17 nhân sự theo 3 khâu phễu · kịch bản 5 bước **B1–B5** + 5 lý do từ chối · phân loại **HOT/WARM/COLD** theo 5 tín hiệu · **bảng SLA** gọi theo khung giờ · phân bậc Telesale + cặp cố định · phiếu bàn giao **12 trường** · chuỗi chăm sóc **T+0 → T+7** · **rubric 10 tiêu chí** chuẩn ≥8/10 · kế hoạch đào tạo M1–M5 · **KPI + rủi ro**.
+
+### K8 THAY THẾ một số phần cũ — mâu thuẫn thì K8 thắng
+
+| Nội dung | Bản cũ | Bản dùng |
+|---|---|---|
+| Phiếu bàn giao | K6 §6 — 8 trường | **K8 §4 — 12 trường** (thêm Zalo, điểm phân loại, link hội thoại, tên trực page) |
+| Rubric chấm hội thoại | A2 — "v1 đề xuất" | **K8 §6 — 10 tiêu chí, chuẩn ≥8/10** |
+| Tiêu chí chấm lead | A3 — "± v1 đề xuất" | **K8 §3 — 5 tín hiệu → HOT/WARM/COLD** |
+
+Đây là thay đổi quan trọng: trước đây A2 và A3 dùng **bản đề xuất chưa duyệt**. Giờ dùng bản thật — nên agent QC và lead scoring sinh ra mới chấm đúng chuẩn đang áp dụng.
+
+### Hai trục phân loại, không gộp
+- **L-code** = *trạng thái vận hành* (L4.1 là **thời điểm** bàn giao)
+- **HOT/WARM/COLD** = *mức ưu tiên* (quyết **SLA** và **bậc Telesale** nào nhận)
+
+Một lead mang cả hai: `L4.1 · HOT` → bậc 1, gọi ≤5 phút. **Thiết kế trường dữ liệu phải để hai cột riêng** — gộp là sai từ schema.
+
+### ⚠️ Dữ liệu nhân sự là nội bộ
+K8 §1 chứa **đánh giá hiệu suất của 17 người có tên**. Thêm **guardrail 10** và **Rule 6d**: không bao giờ nhúng vào system prompt agent con, không bao giờ xuất hiện trong nội dung gửi khách. Chỉ dùng khi trả lời về **đào tạo** và **định tuyến**.
+
+### Thêm 2 đề bài tích hợp (§11 → 12 đề bài)
+- **⑪ Đồng hồ SLA** — tính từ mốc nào, ai bấm giờ, cảnh báo sắp quá hạn ở đâu. Không có thì KPI *"HOT được gọi đúng SLA ≥90%"* vô nghĩa.
+- **⑫ Chống lạm phát HOT** — chấm rộng tay thì HOT tràn lan, SLA vỡ. Rủi ro này đã được nhận diện sẵn trong playbook.
+
+### Trang hướng dẫn — thêm nhóm prompt **Công nghệ**
+Năm câu mới (05–09) dành riêng cho bộ phận kỹ thuật, trả ra thứ viết thẳng thành schema và pseudo-code:
+**Thiết kế schema dữ liệu** · **Logic định tuyến Telesale** (bậc + trần tải + nhánh tràn) · **Đồng hồ SLA: đo và cảnh báo** · **Sự kiện cần log để đo KPI** · **Vòng phản hồi Telesale → Trực page** (webhook/notification).
+
+Tổng 15 câu lệnh: 01–04 tầng hệ thống · **05–09 công nghệ** · 10–15 sản xuất và vận hành.
+
+### Kèm theo
+- `SYSTEM-PROMPT.md` → **17.636 ký tự**. `SYSTEM-PROMPT-NGAN.md` → **7.976 ký tự, chỉ dư 24** — đã phải đẩy phần tra cứu được (bảng 16 mã L, chi tiết 12 đề bài, chi tiết lộ trình) về bộ não đầy đủ. **Sửa là phải đếm lại.**
+- `README.md` và `doc/01-cai-dat.md` đồng bộ lại: 5 chế độ (không còn 2), K1–K8, số ký tự mới, smoke test đổi sang câu tầng hệ thống.
+
+### 🔶 Cần xác nhận
+- Số liệu hiệu suất 17 nhân sự là **bản tháng 10/2026** — cập nhật khi có kỳ đánh giá mới.
+- Mốc **show-up** chưa có — cần đặt trước khi đưa vào KPI chính thức.
+- **Xác nhận playbook là bản đã duyệt** trước khi dùng rubric để đánh giá nhân sự.
+
+---
+
 ## v2.1 — 08/10/2026 · Nâng Factory lên tầng hệ thống
 
 **Vấn đề của bản 2.0:** Factory có mode *"Hỏi vận hành"* dùng để tra cứu tình huống lẻ — *"khách cho số rồi gọi không nghe là mã gì"*. Đó là **việc của agent con** A1/A2 đã sinh ra. Factory sa vào đó thì vừa làm thay việc agent con, vừa loãng mất thứ nó giỏi nhất: **nhìn toàn hệ**.
