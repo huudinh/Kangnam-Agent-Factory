@@ -13,7 +13,7 @@ Module brand-specific. Nguồn: **Playbook Trực Page Kangnam Tháng 10**. Cậ
 | **Rubric chấm hội thoại** | A2 — "rubric v1 đề xuất" | **K8 §6 — bảng 10 tiêu chí, chuẩn ≥8/10.** K8 thay thế |
 | **Tiêu chí chấm lead** | A3 — "bộ tiêu chí ± v1 đề xuất" | **K8 §3 — 5 tín hiệu → HOT/WARM/COLD.** K8 thay thế |
 | **Nhịp chăm sóc** | K5 §7 · K6 nhịp L6 (D+3/D+7/D+15) | **K8 §5 — chuỗi T+0 → T+7.** Hai nhịp khác mục đích: T-series cho **ngay sau khi xin được số**, D-series cho **L6 đã gọi mà chưa booking**. Dùng cả hai, đúng chỗ |
-| **Kịch bản tư vấn** | K5 bank kịch bản theo L-code | **K8 §2 — khung 5 bước B1–B5 + 5 lý do từ chối.** K8 là khung chuẩn; K5 là nội dung chi tiết theo dịch vụ |
+| **Kịch bản tư vấn** | K5 bank kịch bản theo L-code | **K8 §2 — khung 5 bước B1–B5 (câu mẫu đầy đủ) + 5 lý do từ chối + phân biệt page Bệnh viện / page Local.** K8 là khung chuẩn và giọng chuẩn; K5 là nội dung chi tiết theo dịch vụ và theo rào cản L6.x. Dùng cả hai: K8 quyết định *cấu trúc hội thoại*, K5 quyết định *nói gì ở từng tình huống* |
 | **Trạng thái L1–L6** | K6 §2 | **Giữ nguyên.** L-code và HOT/WARM/COLD là **hai trục khác nhau** — xem §3 |
 
 ---
@@ -37,27 +37,70 @@ Module brand-specific. Nguồn: **Playbook Trực Page Kangnam Tháng 10**. Cậ
 
 ---
 
-## §2. KỊCH BẢN TƯ VẤN — KHUNG 5 BƯỚC B1–B5
+## §2. KỊCH BẢN TƯ VẤN INBOX — KHUNG 5 BƯỚC B1–B5
 
-| Bước | Làm gì | Câu mẫu |
-|---|---|---|
-| **B1 · Mở** | Chào, **gọi đúng tên dịch vụ theo quảng cáo khách vừa bấm** | *"…hỏi chị đang muốn cải thiện điểm nào nhất ạ?"* |
-| **B2 · Khám phá** | Thu **đủ 3 thông tin bắt buộc**: tình trạng · mong muốn · thời gian dự kiến | |
-| **B3 · Tạo tin cậy** | Nói về quy trình và bác sĩ, **không hứa kết quả** | *"Bác sĩ sẽ thăm khám chọn phương án phù hợp… do bác sĩ chuyên khoa trực tiếp."* Dùng case **đã công bố** |
-| **B4 · Xin số** | **Luôn kèm lý do + hỏi khung giờ** | *"Để bác sĩ đánh giá đúng… chị cho em xin số điện thoại (có Zalo) nhé. Chị tiện nghe máy khung giờ nào ạ?"* |
-| **B5 · Xác nhận** | **Báo tên Telesale · số gọi · giờ gọi** | *"Khoảng [thời gian], chị [tên Telesale] sẽ gọi chị từ số [hotline]… để ý máy giúp em."* |
+**Khung 5 bước dùng chung cho mọi dịch vụ.** Câu mẫu dưới đây viết cho **dịch vụ phẫu thuật (tuyến bệnh viện)**.
 
-> **B5 là bước làm tăng tỷ lệ kết nối nhiều nhất.** Bỏ B5 là mất lead ở khâu đắt nhất — số đã xin được rồi mà không gọi được.
+> ⚠️ **HAI LOẠI PAGE, HAI GIỌNG KHÁC NHAU:**
+> - **Page Bệnh viện** (tuyến bệnh viện, dịch vụ phẫu thuật) → giọng chuẩn mực, nhấn **chuyên môn y khoa · bác sĩ chuyên khoa · môi trường bệnh viện cấp phép**. Dùng nguyên câu mẫu dưới.
+> - **Page Local** (chi nhánh địa phương) → **đổi giọng gần gũi hơn**, nhấn **"đẹp gần nhà"** (tiện đi lại, không phải lên tuyến trên). Giữ nguyên cấu trúc 5 bước và mọi giới hạn an toàn, chỉ đổi giọng.
+>
+> Agent phải biết đang viết cho page nào trước khi gợi ý nội dung. Không rõ → hỏi một câu.
 
-### Xử lý 5 lý do từ chối
+### B1 · MỞ — chào và định danh nhu cầu
+
+> *"Chào chị, em là `[tên]`, tư vấn viên của Bệnh viện Thẩm mỹ Kangnam. Em thấy chị đang quan tâm đến `[nâng mũi]`. Chị cho em hỏi chị đang muốn cải thiện điểm nào nhất ạ?"*
+
+- **Gọi đúng tên dịch vụ theo quảng cáo khách vừa bấm vào** — không hỏi chung chung "chị cần tư vấn gì".
+- **Trả lời trong 2 phút.** Đây là tiêu chí ① của bảng chấm §6.
+
+### B2 · KHÁM PHÁ — thu đủ 3 thông tin bắt buộc
+
+> *"Trước đây chị đã thực hiện thẩm mỹ vùng này lần nào chưa ạ?"*
+>
+> *"Chị dự kiến sắp xếp thời gian trong tháng này hay để sau ạ?"*
+
+**Ba thông tin bắt buộc phải lấy được:** ① tình trạng hiện tại · ② mong muốn · ③ thời gian dự kiến.
+
+Ba thông tin này là **đầu vào trực tiếp để phân loại HOT/WARM/COLD ở §3** — thiếu thì không chấm được, và phiếu bàn giao §4 cũng không đủ trường.
+
+### B3 · TẠO TIN CẬY — nói về quy trình và bác sĩ
+
+> *"Với trường hợp như chị, bác sĩ sẽ thăm khám để chọn phương án phù hợp với cấu trúc gương mặt. Mọi ca phẫu thuật tại Kangnam được thực hiện trong môi trường bệnh viện được Bộ Y tế cấp phép, do bác sĩ chuyên khoa trực tiếp thực hiện."*
+
+- **Đánh vào đúng nỗi sợ chính:** sợ chọn sai bác sĩ, sợ kết quả không tự nhiên.
+- Chỉ dùng **case đã công bố chính thức**.
+- **Không hứa kết quả.**
+
+### B4 · XIN SỐ — luôn kèm lý do có lợi cho khách
+
+> *"Để bác sĩ đánh giá đúng tình trạng và báo chi phí sát với chị, chị cho em xin số điện thoại (có Zalo) nhé. Chị tiện nghe máy khung giờ nào ạ?"*
+
+- Lý do phải **có lợi cho khách** (bác sĩ đánh giá đúng, báo chi phí sát), không phải có lợi cho mình.
+- **Luôn hỏi kèm khung giờ tiện nghe máy.**
+- ❌ **Không xin số bằng lý do "để gửi ưu đãi".**
+
+### B5 · XÁC NHẬN — báo trước ai gọi, số nào, lúc mấy giờ
+
+> *"Em cảm ơn chị. Khoảng `[10 phút nữa / 16h chiều nay]`, chị `[tên Telesale]` của Kangnam sẽ gọi chị từ số `[hotline]`. Chị để ý máy giúp em nhé. Nếu bận chị nhắn em, em dời giờ cho chị."*
+
+Ba thứ bắt buộc có: **tên người sẽ gọi · số sẽ gọi đến · giờ gọi**. Kèm lối thoát "bận thì em dời giờ" để khách không thấy bị ép.
+
+> **B5 là bước làm tăng tỷ lệ kết nối nhiều nhất.** Bỏ B5 là mất lead ở khâu đắt nhất — số đã xin được rồi mà không gọi được. Đây chính là khâu đang hổng: kết nối 72% so với mục tiêu 80% (§8).
+
+---
+
+### Xử lý 5 lý do từ chối phổ biến (nội dung học phần **M3**)
 
 | Khách nói | Hướng trả lời |
 |---|---|
-| *"Giá bao nhiêu?"* | Nêu **khung giá tham khảo**; chi phí cuối phụ thuộc tình trạng sau thăm khám; xin số để bác sĩ báo |
-| *"Có đau không?"* | **Trung thực**: có sưng đau trong hồi phục; Kangnam hạn chế sưng đau; mời trao đổi với bác sĩ |
-| *"Để sắp xếp đã"* | Đặt lịch **thăm khám** trước, đưa **2 khung giờ cụ thể** |
-| *"Hỏi người nhà đã"* | Mời người nhà **đi cùng buổi thăm khám**, gửi thông tin bác sĩ chia sẻ |
-| *"Xem thêm vài nơi"* | Gợi **bộ tiêu chí so sánh**: cấp phép · bác sĩ mổ chính · quy trình · tái khám. **Không nêu tên đối thủ** |
+| **"Giá bao nhiêu?"** *(khi chưa cho số)* | Đưa **khung giá tham khảo đã niêm yết**; giải thích chi phí cuối cùng phụ thuộc **chỉ định sau thăm khám**; rồi xin số để bác sĩ báo chi phí theo đúng tình trạng |
+| **"Có đau không, có biến chứng không?"** | **Trung thực**: có sưng đau trong thời gian hồi phục; Kangnam áp dụng phương pháp hạn chế sưng đau; mời trao đổi trực tiếp với bác sĩ. ❌ Không nói *"không đau"*, *"an toàn tuyệt đối"* |
+| **"Để chị sắp xếp đã"** | Đặt lịch **thăm khám** trước — nói rõ **chưa phải thực hiện** — và đưa **2 khung giờ cụ thể**. **Khách tỉnh:** tư vấn online trước, sắp xếp trọn quy trình trong một ngày |
+| **"Chị hỏi chồng / người nhà đã"** | Mời người nhà **đi cùng buổi thăm khám**. Gửi thông tin bác sĩ và quy trình để khách chia sẻ lại với gia đình |
+| **"Chị đang xem thêm vài nơi"** | Gợi ý **bộ tiêu chí so sánh**: cơ sở được cấp phép · bác sĩ mổ chính là ai · quy trình chuẩn · chế độ tái khám. ❌ **Không nêu tên, không chê đối thủ** |
+
+> **Về câu hỏi giá:** được nêu **khung giá niêm yết** (bảng giá tham khảo ở [[K4-dich-vu]] §5), **không** được chốt một con số cuối cùng qua tin nhắn. Hai việc khác nhau — lờ câu hỏi giá là lỗi cấm #1 ở [[K5-kich-ban]], mà bắn giá cứng cũng sai.
 
 ### Từ cấm — vi phạm là hội thoại bị tính **0/10**
 `cam kết 100%` · `tốt nhất` · `không đau` · `an toàn tuyệt đối`
@@ -187,8 +230,8 @@ Mười tiêu chí: ① phản hồi trong 2' · ② gọi đúng tên dịch v�
 
 | Agent | Dùng phần nào |
 |---|---|
-| **A1** Tư vấn | §2 khung B1–B5 + 5 lý do từ chối + từ cấm · §5 chuỗi T+0→T+7 · §3 để gợi ý phân loại. **KHÔNG nạp §1** |
-| **A2** QC | §6 bảng 10 tiêu chí (thay rubric v1) · §2 để biết bước nào thiếu · §4 kiểm phiếu đủ trường |
+| **A1** Tư vấn | §2 khung B1–B5 **(câu mẫu đầy đủ, dùng làm giọng chuẩn)** + 5 lý do từ chối + từ cấm · §5 chuỗi T+0→T+7 · §3 để gợi ý phân loại. **Phải biết đang viết cho page Bệnh viện hay page Local** — không rõ thì hỏi. **KHÔNG nạp §1** |
+| **A2** QC | §6 bảng 10 tiêu chí (thay rubric v1) · §2 để biết **bước nào thiếu và câu mẫu đúng trông thế nào** · §4 kiểm phiếu đủ trường |
 | **A3** Lead Scoring | §3 năm tín hiệu → HOT/WARM/COLD (thay tiêu chí v1) · §4 để biết SLA và bậc nào nhận |
 | **A4** Nhắc lịch | §5 chuỗi T+0→T+7 · §4 vòng phản hồi Telesale |
 | **Factory** | §1 để trả lời về đào tạo và định tuyến · §8 để trả lời về KPI và rủi ro |

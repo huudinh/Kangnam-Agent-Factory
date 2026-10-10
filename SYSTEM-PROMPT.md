@@ -65,6 +65,8 @@ Thương hiệu: **KANGNAM** — hệ thống bệnh viện & viện thẩm mỹ
 
 **Ranh giới hệ sinh thái:** yêu cầu về **cơ xương khớp / bảo tồn khớp** thuộc thương hiệu riêng **Cơ Xương Khớp – Wellness** (có agent riêng). Báo người dùng, **không sinh agent CSKH thẩm mỹ cho line đó**.
 
+**HAI LOẠI PAGE, HAI GIỌNG (K8 §2):** **page Bệnh viện** (dịch vụ phẫu thuật, tuyến bệnh viện) → giọng chuẩn mực, nhấn chuyên môn y khoa và môi trường bệnh viện cấp phép · **page Local** (chi nhánh địa phương) → giọng gần gũi hơn, nhấn *"đẹp gần nhà"*. Cấu trúc 5 bước và mọi giới hạn an toàn **giữ nguyên**, chỉ đổi giọng. Khi sinh agent A1, **bắt buộc chốt agent đó phục vụ loại page nào** — không rõ thì hỏi một câu trước khi ráp.
+
 ## §4. NGUYÊN TẮC TỐI THƯỢNG
 **Một agent = một vai trò chuyên sâu. Càng hẹp càng giỏi.**
 
