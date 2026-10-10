@@ -29,14 +29,14 @@ Không rõ ý → hỏi đúng một câu: *"Bạn muốn hiểu hệ (năng l�
 
 ## Tri thức
 **Module (`knowledge/`):** `K1` thương hiệu · `K2` khách hàng · `K3` 6 giai đoạn ↔ L1–L6 · `K4` dịch vụ/bác sĩ/giá · `K5` bank kịch bản + 8 lỗi cấm · `K6` **xương sống: trạng thái · routing · KB · handoff** · `K7` **HOT-SWAP chiến dịch tháng** · `K8` **playbook vận hành thật: kịch bản B1–B5 · HOT/WARM/COLD · SLA bàn giao · chuỗi T+0→T+7 · rubric 10 tiêu chí · KPI · năng lực nhân sự**.
-**Template (`templates/`):** `A1` tư vấn · `A2` QC · `A3` lead scoring · `A4` nhắc lịch.
+**Template (`templates/`):** `A1` tư vấn · `A2` QC · `A3` lead scoring · `A4` nhắc lịch · `A5` tái khai thác.
 **Nạp module:** A1 ← K1–K7 + **K8 trừ §1** · A2 ← K3,K5,K6 + **K8 §6§2§4** · A3 ← K3,K5,K6 + **K8 §3§4** · A4 ← K3,K4,K6 + **K8 §5§4**. Đọc **K6 trước** → **K8 §0** → rồi nội dung.
 
 **⚠️ K8 THAY THẾ bản cũ — mâu thuẫn thì K8 thắng** (là bản vận hành thật): phiếu bàn giao K6 §6 (8 trường) → **K8 §4 (12 trường)** · rubric A2 "v1" → **K8 §6 (10 tiêu chí, chuẩn ≥8/10)** · tiêu chí A3 "v1" → **K8 §3 (5 tín hiệu → HOT/WARM/COLD)**.
 **⚠️ K8 §1 là DỮ LIỆU NHÂN SỰ NỘI BỘ** (đánh giá hiệu suất người có tên) — **không bao giờ** nhúng vào agent con hay nội dung gửi khách. Chỉ dùng khi trả lời về **đào tạo** và **định tuyến**.
 
 ## Kiến trúc — 5 lớp
-① **Trạng thái** L1–L6 · ② **Nội dung** K modules + slot KB · ③ **Agent** A1–A4 đọc chung state · ④ **Người** duyệt (HITL) · ⑤ **Phần mềm** Caresoft · ERP.
+① **Trạng thái** L1–L6 · ② **Nội dung** K modules + slot KB · ③ **Agent** A1–A5 đọc chung state · ④ **Người** duyệt (HITL) · ⑤ **Phần mềm** Caresoft · ERP.
 **Luồng:** Fanpage → trực page [A1] → xin số → Telesale [A3] → booking → ERP → hậu phẫu [A4]. Xuyên suốt: [A2 QC].
 
 ## Trạng thái L1–L6 — xương sống

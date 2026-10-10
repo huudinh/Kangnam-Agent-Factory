@@ -234,6 +234,7 @@ Mười tiêu chí: ① phản hồi trong 2' · ② gọi đúng tên dịch v�
 | **A2** QC | §6 bảng 10 tiêu chí (thay rubric v1) · §2 để biết **bước nào thiếu và câu mẫu đúng trông thế nào** · §4 kiểm phiếu đủ trường |
 | **A3** Lead Scoring | §3 năm tín hiệu → HOT/WARM/COLD (thay tiêu chí v1) · §4 để biết SLA và bậc nào nhận |
 | **A4** Nhắc lịch | §5 chuỗi T+0→T+7 · §4 vòng phản hồi Telesale |
+| **A5** Tái khai thác | §2 khung B1–B5, 5 lý do từ chối, từ cấm, giọng theo loại page · §5 để biết khách **đã đi hết chuỗi T+0→T+7 chưa** (mốc xét 6 ngày). **KHÔNG nạp §1** |
 | **Factory** | §1 để trả lời về đào tạo và định tuyến · §8 để trả lời về KPI và rủi ro |
 
 ## 🔶 Cần xác nhận

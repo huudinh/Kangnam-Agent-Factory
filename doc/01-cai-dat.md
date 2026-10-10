@@ -56,12 +56,12 @@ Sinh agent CSKH (tư vấn, QC, lead scoring, nhắc lịch) và giải thích l
 | Nhóm | Upload? | Vì sao |
 |---|---|---|
 | `knowledge/K1–K8` (8 file) | ✅ **Có** | Module thương hiệu — Agent đọc để ráp agent con |
-| `templates/A1–A4` (4 file) | ✅ **Có** | Khuôn agent con — thiếu thì Factory không ráp được |
+| `templates/A1–A5` (5 file) | ✅ **Có** | Khuôn agent con — thiếu thì Factory không ráp được |
 | `SYSTEM-PROMPT.md` | ⚠ **Chỉ với ChatGPT** | Bản ngắn ra lệnh đọc file này để lấy chi tiết |
 | `doc/` (5 file) | ❌ **Không** | Tài liệu cho người đọc, upload chỉ làm loãng |
 | `doc/v1-ban-goc-brain.md` | ❌ **Tuyệt đối không** | Bản cũ, nạp vào sẽ mâu thuẫn với bộ não mới |
 
-> **Mã `K1–K8` và `A1–A4` là từ vựng vận hành** — được tham chiếu khắp các module (K5 được nhắc 36 lần, K7 33 lần) và trong hội thoại hàng ngày. **Không đổi tên file.**
+> **Mã `K1–K8` và `A1–A5` là từ vựng vận hành** — được tham chiếu khắp các module (K5 được nhắc 36 lần, K7 33 lần) và trong hội thoại hàng ngày. **Không đổi tên file.**
 
 ---
 

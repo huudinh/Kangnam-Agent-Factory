@@ -1,5 +1,34 @@
 # CHANGELOG — AGENT FACTORY (KANGNAM)
 
+## v2.3 — Kịch bản tư vấn đầy đủ + agent A5 tái khai thác
+
+**Ngày:** 2026-10-10
+
+### Nạp kịch bản tư vấn inbox đầy đủ vào `K8 §2`
+Trước đây chỉ có khung B1–B5 với câu mẫu cắt cụt. Nay là câu mẫu nguyên văn cả 5 bước từ Playbook Trực Page Tháng 10, kèm:
+- B1 yêu cầu **trả lời trong 2 phút** (khớp tiêu chí ① bảng chấm §6)
+- B2 hai câu hỏi cụ thể để thu đủ 3 thông tin bắt buộc
+- B3 luận điểm *môi trường bệnh viện được Bộ Y tế cấp phép*
+- B4 cấm xin số bằng lý do *"để gửi ưu đãi"*
+- B5 lối thoát *"bận thì em dời giờ"*
+- Bảng 5 lý do từ chối: thêm xử lý **khách tỉnh**, làm rõ *đặt lịch thăm khám chưa phải thực hiện*
+
+**Khái niệm mới:** phân biệt **page Bệnh viện** và **page Local** — cùng khung 5 bước và cùng giới hạn an toàn, khác giọng (page Local nhấn *"đẹp gần nhà"*). Ghi thêm vào `SYSTEM-PROMPT §3`: sinh A1 phải chốt loại page trước khi ráp.
+
+### Thêm agent `A5 — Tái khai thác & Tạo nội dung`
+Agent thứ năm, cho team trực page. Khác A4: **không quản lý lịch, không nhắc giờ** — chỉ trả lời *khách này còn chạm lại được không, bằng kênh nào, nói gì*.
+
+Phạm vi: **tệp A** chưa cho số quá 6 ngày · **tệp B** đã cho số quá 6 ngày (đã hết chuỗi T+0→T+7).
+
+Nội dung chính: bảng kênh theo trạng thái (cảnh báo **cửa sổ 24h Messenger**) · 5 lý do liên hệ hợp lệ · 4 nguyên tắc tái khai thác · điều kiện dừng kiểm trước khi soạn.
+
+**4 slot chờ Kangnam chốt** ghi cuối file A5 — quan trọng nhất là kênh chạm tệp A khi cửa sổ 24h đã đóng.
+
+### File đổi
+`knowledge/K8-nang-luc-kich-ban-ban-giao.md` · `templates/A5-tai-khai-thac.md` *(mới)* · `SYSTEM-PROMPT.md` · `SYSTEM-PROMPT-NGAN.md` · `README.md` · `doc/01-cai-dat.md`
+
+---
+
 ## v2.2 — 08/10/2026 · Nạp K8 (playbook vận hành thật)
 
 **Thêm `knowledge/K8-nang-luc-kich-ban-ban-giao.md`** — nguồn: *Playbook Trực Page Kangnam Tháng 10*. Đây là **bản vận hành thật đang chạy**, khác với các module trước phần lớn là khung và đề xuất.

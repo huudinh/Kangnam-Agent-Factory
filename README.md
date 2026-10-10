@@ -1,10 +1,10 @@
 # 🏭 AGENT FACTORY — Meta-agent sinh agent CSKH (Kangnam)
 
-> Version 2.2 · **Meta-agent dựng hệ 4 agent CSKH.** Nó trả lời ở **tầng hệ thống** — hệ làm được gì · vận hành thế nào · phát triển tới đâu · phải giải đề bài nào để tích hợp — và sinh ra system prompt cho agent con.
+> Version 2.2 · **Meta-agent dựng hệ 5 agent CSKH.** Nó trả lời ở **tầng hệ thống** — hệ làm được gì · vận hành thế nào · phát triển tới đâu · phải giải đề bài nào để tích hợp — và sinh ra system prompt cho agent con.
 >
 > **Không xử lý tình huống của một khách cụ thể** — đó là việc của agent con mà nó sinh ra.
 
-Theo công thức HCI **R·M·K·W·O (+Rules)**. Kiến trúc **lõi brand-neutral** ([`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md)) + **module thương hiệu** ([`knowledge/K1–K8`](knowledge/)) + **template agent con** ([`templates/A1–A4`](templates/)) → **đổi brand = đổi module K, không sửa lõi**.
+Theo công thức HCI **R·M·K·W·O (+Rules)**. Kiến trúc **lõi brand-neutral** ([`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md)) + **module thương hiệu** ([`knowledge/K1–K8`](knowledge/)) + **template agent con** ([`templates/A1–A5`](templates/)) → **đổi brand = đổi module K, không sửa lõi**.
 
 ---
 
@@ -20,7 +20,7 @@ AI **không** thao tác trực tiếp trên Caresoft/ERP ở Phase 1: nhân viê
 
 ---
 
-## Bốn agent sinh ra được
+## Năm agent sinh ra được
 
 | Agent | Việc | Module nạp |
 |---|---|---|
@@ -28,6 +28,7 @@ AI **không** thao tác trực tiếp trên Caresoft/ERP ở Phase 1: nhân viê
 | **A2 QC** | Chấm hội thoại theo **rubric 10 tiêu chí**, báo lỗi NV, action plan đào tạo | K3 · K5 · K6 · **K8 §6 §2 §4** |
 | **A3 Lead Scoring** | Chấm **5 tín hiệu → HOT/WARM/COLD**, gắn SLA tương ứng | K3 · K5 · K6 · **K8 §3 §4** |
 | **A4 Nhắc lịch** | Sinh lịch nhắc theo **chuỗi T+0→T+7** | K3 · K4 · K6 · **K8 §5 §4** |
+| **A5 Tái khai thác** | Sinh nội dung chạm lại **tệp nguội** — chưa cho số, hoặc đã cho số quá 6 ngày. **Không quản lý lịch** | K2 · K3 · K4 · K5 · K6 · K7 · **K8 §2 §5 (trừ §1)** |
 
 ---
 
@@ -154,7 +155,7 @@ Agent chỉ đọc bản hiện hành → không chào nhầm ưu đãi cũ.
 | [doc/CHANGELOG.md](doc/CHANGELOG.md) | Lịch sử · việc còn treo | ✅ |
 | [doc/v1-ban-goc-brain.md](doc/v1-ban-goc-brain.md) | Bản gốc `00-FACTORY.md` v1.0 — lưu đối chiếu, **không dùng để cài** | 📦 |
 
-> **Quy ước:** mã `K1–K8` và `A1–A4` là **từ vựng vận hành**, được tham chiếu khắp các module và trong hội thoại hàng ngày — **không đổi tên**.
+> **Quy ước:** mã `K1–K8` và `A1–A5` là **từ vựng vận hành**, được tham chiếu khắp các module và trong hội thoại hàng ngày — **không đổi tên**.
 
 ---
 
