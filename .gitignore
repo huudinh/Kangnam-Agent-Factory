@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+
+# File xuat tu Caresoft va ban khu dinh danh - khong commit du lieu khach
+*-an-danh.xlsx
+*-BANG-TRA-NOI-BO.xlsx
+*-bao-cao-khu.txt
