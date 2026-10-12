@@ -9,5 +9,7 @@ __pycache__/
 # File khoa tam cua Excel
 ~$*
 
-# Du lieu khach that - KHONG commit (de bai #8: khong dua dinh danh khach ra ngoai)
+# output/ = du lieu lam viec, KHONG commit (de bai #8: khong dua dinh danh khach ra ngoai).
+# Chan tat ca theo mac dinh. File nao an toan thi copy sang doc/mau-du-lieu/ roi commit
+# ban do - dung mo cua o day, de lan sau tha file co ten khach vao khong bi lot.
 output/
