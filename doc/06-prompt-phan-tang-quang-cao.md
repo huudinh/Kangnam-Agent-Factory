@@ -97,7 +97,7 @@ Chỉ dùng khi không có hội thoại. Chấm từng post theo 5 đặc trưn
 → 4–5 điểm: dự đoán kéo HOT · 2–3: WARM · 0–1: COLD
 Ghi rõ đây là DỰ ĐOÁN, phải đối chiếu lại khi có hội thoại thật.
 
-# CẤU TRÚC FILE EXCEL — 7 sheet, đúng thứ tự
+# CẤU TRÚC FILE EXCEL — 12 sheet, đúng thứ tự
 
 1. **Tổng quan**
    Kỳ · dịch vụ · chế độ chạy (A hay B) · nguồn dữ liệu · ngày lập.
@@ -147,7 +147,30 @@ Ghi rõ đây là DỰ ĐOÁN, phải đối chiếu lại khi có hội thoại
    → Dùng để biết post nào cần sửa thông điệp từ gốc, post nào chỉ cần
      trang bị trước kịch bản xử lý cho trực page.
 
-7. **Dữ liệu thô** — để kiểm chứng lại, cột:
+7. **① Nhiệt · Vấn đề × Độ nóng** — biểu đồ nhiệt. Hàng = vấn đề khách quan tâm
+   (suy từ tin khách gõ), cột = HOT/WARM/COLD. Cột phụ bên phải: Tổng HT ·
+   **% HOT** · **% HOT\*** · % cho số.
+   > ⚠ **Bắt buộc có cột `% HOT*`.** Tín hiệu ① của thang chấm chính là *"nêu dịch vụ
+   > cụ thể"*. Bảng này lại chia nhóm **theo vấn đề**, nên mọi nhóm có vấn đề cụ thể
+   > đã được cộng sẵn 1 điểm — cột `% HOT` thường bị **lặp vòng** và không so sánh
+   > được. `% HOT*` chấm lại chỉ bằng 4 tín hiệu còn lại (②③④⑤), đạt ≥3/4 tính HOT*.
+   > Ghi ngay dưới bảng: cột nào dùng được, cột nào không, và số thật là bao nhiêu.
+
+8. **② Nhiệt · Góc tiếp cận × Vấn đề** — mỗi góc quảng cáo kéo về nhóm vấn đề nào.
+   Dùng để chọn góc khi viết content mới.
+
+9. **③ Nhiệt · Vấn đề × Rào cản** — mỗi nhóm vấn đề thường vướng gì. Một hội thoại
+   có thể mang nhiều rào cản. Dùng để biết nên **sửa thông điệp từ gốc** hay chỉ cần
+   **trang bị trước kịch bản** cho trực page.
+
+10. **④ Nhiệt · Post × Độ nóng** — như sheet 3 nhưng dạng nhiệt, có cột *Đủ mẫu?*
+
+11. **Mẫu hội thoại thực tế** — mỗi nhóm vấn đề tối đa 3 ca, cột:
+    Vấn đề | HT# | Độ nóng | Có SĐT | Post | Trích lời khách
+    → **Che số điện thoại** trong phần trích. Đây là phần giúp người đọc kiểm tra
+      máy phân loại có đúng không — bảng số mà không có ví dụ thì không ai tin được.
+
+12. **Dữ liệu thô** — để kiểm chứng lại, cột:
    STT HT | Tên KH | Ngày | Thẻ nguồn gốc (nguyên văn) | Mã post sau chuẩn hoá |
    Có SĐT | Bitmask tín hiệu | Độ nóng
    → Bắt buộc có sheet này. Không có thì không ai kiểm được con số ở sheet 3.
@@ -162,9 +185,23 @@ Nếu được cho từ 2 kỳ trở lên (ví dụ tháng 7 và tháng 10), th�
 # QUY TẮC
 - Mọi con số phải đếm được từ dữ liệu. Không ước lượng, không làm tròn đẹp.
 - Post dưới 10 hội thoại: ghi ⚠ chưa đủ mẫu, KHÔNG xếp hạng, KHÔNG khuyến nghị.
+- **Kiểm tra lặp vòng trước khi kết luận.** Khi chia nhóm theo một thuộc tính X mà X
+  lại là một trong các tín hiệu dùng để chấm điểm, thì chênh lệch điểm giữa các nhóm
+  là giả. Phải chấm lại không kể tín hiệu đó rồi mới so sánh. Nếu sau khi bỏ mà chênh
+  lệch biến mất, phải nói thẳng là **không có bằng chứng**, không được giữ kết luận cũ.
 - Không suy ra hiệu quả quảng cáo từ nội dung post khi đã có dữ liệu thật.
 - Không đưa số điện thoại hay thông tin định danh khách vào file.
 - Chỉ số ưu đãi/giá xuất hiện trong post thì trích nguyên văn và gắn ⚠.
+
+# QUY TẮC VẼ BIỂU ĐỒ NHIỆT
+- Tô nhiệt bằng **conditional formatting kiểu color scale** (openpyxl: `ColorScaleRule`),
+  KHÔNG tô màu cứng từng ô. Thang: trắng (nhỏ nhất) → vàng cam (phân vị 50) → đỏ (lớn nhất).
+- Chỉ tô nhiệt **vùng ô đếm**. Cột Tổng / % / Đủ mẫu để nền vàng nhạt, không tô nhiệt —
+  nếu tô chung, cột % sẽ át hết vì thang giá trị khác hẳn.
+- Mỗi bảng một thang màu riêng. Ghi rõ **màu chỉ so sánh trong cùng một bảng**.
+- Mỗi bảng nhiệt phải có **một khối "Đọc nhanh"** ngay dưới, nêu 2–4 điều rút ra, mỗi
+  điều kèm con số. Không có diễn giải thì bảng màu chỉ để nhìn cho đẹp.
+- Ô dưới 10 ca: nói rõ trong phần Đọc nhanh là không kết luận được.
 
 # TRÌNH BÀY
 Font Arial · freeze dòng tiêu đề · wrap text cột dài · tiêu đề nền đậm chữ trắng.
