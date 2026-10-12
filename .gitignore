@@ -8,3 +8,6 @@ __pycache__/
 
 # File khoa tam cua Excel
 ~$*
+
+# Du lieu khach that - KHONG commit (de bai #8: khong dua dinh danh khach ra ngoai)
+output/

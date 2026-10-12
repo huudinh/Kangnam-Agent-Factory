@@ -152,6 +152,7 @@ Agent chỉ đọc bản hiện hành → không chào nhầm ưu đãi cũ.
 | [doc/02-cau-lenh.md](doc/02-cau-lenh.md) | Câu lệnh 2 mode · prompt mẫu · điều Agent sẽ từ chối | ✅ |
 | [doc/03-output-mau.md](doc/03-output-mau.md) | Output mẫu cả 2 mode · dấu hiệu đúng/sai | ✅ |
 | [doc/04-prompt-nguoi-moi.md](doc/04-prompt-nguoi-moi.md) | Prompt mẫu | ✅ |
+| [doc/05-prompt-phan-tich-hoi-thoai.md](doc/05-prompt-phan-tich-hoi-thoai.md) | Prompt đọc file hội thoại → sinh 2 file Excel phân loại &amp; kịch bản | ✅ |
 | [doc/CHANGELOG.md](doc/CHANGELOG.md) | Lịch sử · việc còn treo | ✅ |
 | [doc/v1-ban-goc-brain.md](doc/v1-ban-goc-brain.md) | Bản gốc `00-FACTORY.md` v1.0 — lưu đối chiếu, **không dùng để cài** | 📦 |
 

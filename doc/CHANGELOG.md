@@ -24,6 +24,11 @@ Nội dung chính: bảng kênh theo trạng thái (cảnh báo **cửa sổ 24h
 
 **4 slot chờ Kangnam chốt** ghi cuối file A5 — quan trọng nhất là kênh chạm tệp A khi cửa sổ 24h đã đóng.
 
+### Thêm `doc/05-prompt-phan-tich-hoi-thoai.md`
+Prompt tái sử dụng: cho AI đọc một file hội thoại xuất từ Caresoft → sinh 2 file Excel (`PhanLoai_KichBan` theo quy trình 4 bước, và `KichBan_<DV>` theo nhóm đối tượng A/B/C). Khoá sẵn toàn bộ bộ mã (S1–S3, L-code, nhóm A1–A6/B1–B5/C1–C2, mã kịch bản S1.x–S3.x/X1–X4/CS) để kết quả tái lập được.
+
+Ép **chấm 5 tín hiệu một lần duy nhất rồi cả hai file dùng chung** — bản sinh thủ công trước đó từng cho hai kết quả lệch nhau trên cùng 100 hội thoại (HOT 47·WARM 50·COLD 3 so với HOT 25·WARM 57·COLD 18).
+
 ### File đổi
 `knowledge/K8-nang-luc-kich-ban-ban-giao.md` · `templates/A5-tai-khai-thac.md` *(mới)* · `SYSTEM-PROMPT.md` · `SYSTEM-PROMPT-NGAN.md` · `README.md` · `doc/01-cai-dat.md`
 
