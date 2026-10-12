@@ -29,6 +29,15 @@ Prompt tái sử dụng: cho AI đọc một file hội thoại xuất từ Care
 
 Ép **chấm 5 tín hiệu một lần duy nhất rồi cả hai file dùng chung** — bản sinh thủ công trước đó từng cho hai kết quả lệch nhau trên cùng 100 hội thoại (HOT 47·WARM 50·COLD 3 so với HOT 25·WARM 57·COLD 18).
 
+### Thêm `doc/06-prompt-phan-tang-quang-cao.md`
+Prompt phân tầng post quảng cáo: post nào kéo về khách HOT, post nào chỉ kéo người hỏi dạo. Sinh 1 file Excel 7 sheet.
+
+Phát hiện quan trọng: hội thoại xuất từ Caresoft **đã có sẵn thẻ nguồn** `[Thẻ: Inbox từ quảng cáo <tên post> – …]` ở tin đầu. Đây là khoá nối post ↔ hội thoại, nên **đo được thật** thay vì suy đoán từ nội dung post. Trong 100 hội thoại cắt mí tháng 10 có 15 post phân biệt được.
+
+Prompt có 2 chế độ: **A đo thật** (ưu tiên, khi có hội thoại cùng kỳ) và **B dự đoán** (chỉ khi không còn log).
+
+Hai cảnh báo phương pháp được ép vào file đầu ra: mẫu 100 hội thoại hiện có là mẫu **đã lọc theo độ dài** nên thiên về phía nóng, không dùng để quyết ngân sách; và post dưới 10 hội thoại thì không xếp hạng, không khuyến nghị.
+
 ### File đổi
 `knowledge/K8-nang-luc-kich-ban-ban-giao.md` · `templates/A5-tai-khai-thac.md` *(mới)* · `SYSTEM-PROMPT.md` · `SYSTEM-PROMPT-NGAN.md` · `README.md` · `doc/01-cai-dat.md`
 
