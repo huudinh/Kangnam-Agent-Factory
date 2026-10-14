@@ -1,10 +1,29 @@
 # 🏭 AGENT FACTORY — Meta-agent sinh agent CSKH (Kangnam)
 
-> Version 2.2 · **Meta-agent dựng hệ 5 agent CSKH.** Nó trả lời ở **tầng hệ thống** — hệ làm được gì · vận hành thế nào · phát triển tới đâu · phải giải đề bài nào để tích hợp — và sinh ra system prompt cho agent con.
+> Version 2.3 · **Meta-agent dựng hệ 5 agent CSKH.** Nó trả lời ở **tầng hệ thống** — hệ làm được gì · vận hành thế nào · phát triển tới đâu · phải giải đề bài nào để tích hợp — và sinh ra system prompt cho agent con.
 >
 > **Không xử lý tình huống của một khách cụ thể** — đó là việc của agent con mà nó sinh ra.
 
 Theo công thức HCI **R·M·K·W·O (+Rules)**. Kiến trúc **lõi brand-neutral** ([`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md)) + **module thương hiệu** ([`knowledge/K1–K8`](knowledge/)) + **template agent con** ([`templates/A1–A5`](templates/)) → **đổi brand = đổi module K, không sửa lõi**.
+
+---
+
+## 📘 Hướng dẫn sử dụng
+
+> ### → **[Mở trang hướng dẫn](https://claude.ai/artifact/PWmzQ3PkLfZ6yjnt8gm8K2)**
+>
+> Mở đầu là **phần giới thiệu riêng cho từng nhóm người dùng** — nhóm đó hỏi agent việc gì, và agent **không** làm gì cho họ. Sau đó là prompt dùng được ngay:
+>
+> | Nhóm | Có gì ở đó |
+> |---|---|
+> | **① Trực Page** | Prompt tư vấn · kịch bản B1–B5 · xử lý 5 lý do từ chối · chạm lại tệp nguội · chấm hội thoại |
+> | **② Ads** | Prompt phân tầng post theo HOT/WARM/COLD · biểu đồ nhiệt khách theo vấn đề · file mẫu đầu vào · kết quả chạy thử trên 100 hội thoại thật |
+> | **③ CEO Dịch vụ** | Báo cáo chỉ số theo dịch vụ — phễu rò ở khâu nào · chân dung khách theo vấn đề và rào cản · chất lượng tư vấn · hiệu quả quảng cáo · so hai kỳ |
+> | **④ CNTT** | Prompt tạo agent · kiến trúc và luồng hệ thống · schema dữ liệu · hồ sơ bàn giao 03 trợ lý AI |
+>
+> Kèm mục **hỏi nhanh** cho từng nhóm và nút tải cả bộ file trong repo này về máy.
+
+**Người mới bắt đầu từ trang đó, không phải từ đây.** Repo này là phần file để cài vào Project/GPT/Gem — trang hướng dẫn nói *khi nào dùng cái gì*.
 
 ---
 
@@ -83,7 +102,7 @@ QC gán L-code → Lead Scoring chấm theo L-code → A1 chọn kịch bản th
 
 1. Tạo 1 Project / GPT / Gem mới. Tên và mô tả ngắn: xem [`doc/01-cai-dat.md` §0](doc/01-cai-dat.md).
 2. **Instructions:** dán khối ▼▲ trong [`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md) — riêng **ChatGPT** dùng [`SYSTEM-PROMPT-NGAN.md`](SYSTEM-PROMPT-NGAN.md).
-3. **Knowledge:** upload 8 module trong [`knowledge/`](knowledge/) + 4 template trong [`templates/`](templates/).
+3. **Knowledge:** upload 8 module trong [`knowledge/`](knowledge/) + 5 template trong [`templates/`](templates/).
 4. Ra lệnh tạo agent, hoặc hỏi thẳng câu vận hành.
 
 **Câu lệnh mẫu:**
@@ -134,8 +153,8 @@ Agent chỉ đọc bản hiện hành → không chào nhầm ưu đãi cũ.
 
 | File | Nội dung | Trạng thái |
 |---|---|---|
-| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | Bộ não meta-agent — **17 mục** · **17.636 ký tự** | ✅ |
-| [SYSTEM-PROMPT-NGAN.md](SYSTEM-PROMPT-NGAN.md) | Bản ngắn **7.976 ký tự** — chỉ cho **ChatGPT** · ⚠ **chỉ dư 24 ký tự, sửa phải đo lại** | ✅ |
+| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | Bộ não meta-agent — **17 mục** · **18.233 ký tự** | ✅ |
+| [SYSTEM-PROMPT-NGAN.md](SYSTEM-PROMPT-NGAN.md) | Bản ngắn **7.997 ký tự** — chỉ cho **ChatGPT** · ⚠ **chỉ dư 3 ký tự, sửa phải đo lại** | ✅ |
 | [knowledge/K1-thuong-hieu.md](knowledge/K1-thuong-hieu.md) | Thương hiệu Kangnam — trích yếu cho agent | ✅ |
 | [knowledge/K2-khach-hang.md](knowledge/K2-khach-hang.md) | Chân dung · insight cảm xúc · key tâm lý theo nhóm | ✅ |
 | [knowledge/K3-hanh-vi-trang-thai.md](knowledge/K3-hanh-vi-trang-thai.md) | **Bản đồ 6 giai đoạn ↔ L1–L6 ↔ agent** | ✅ |
@@ -165,7 +184,5 @@ Agent chỉ đọc bản hiện hành → không chào nhầm ưu đãi cũ.
 ## Ranh giới
 
 Human-in-the-loop · không cam kết kết quả tuyệt đối ("đẹp 100%", "an toàn tuyệt đối", "tương thích 100%") · không chẩn đoán/kê đơn · không báo giá cứng chưa xác minh · kiểm chứng mọi con số từ K7 · không bịa bác sĩ/ca bệnh/giải thưởng/case · chỉ nêu bác sĩ **đã được duyệt quảng bá**, không trích số ca chưa xác minh · không nạp CCCD/hồ sơ bệnh án/ảnh khách lên công cụ công cộng · **nhóm khách có thể là vị thành niên** → nội dung phù hợp lứa tuổi, hướng có giám hộ.
-
-**Yêu cầu về cơ xương khớp / bảo tồn khớp** thuộc thương hiệu riêng **Cơ Xương Khớp – Wellness**, có agent riêng [`Agent-CoXuongKhop`](../Agent-CoXuongKhop/) — không sinh agent CSKH thẩm mỹ cho line đó.
 
 Mọi agent sinh ra là **bản đề xuất**, phải qua người duyệt trước khi chạy thật.
