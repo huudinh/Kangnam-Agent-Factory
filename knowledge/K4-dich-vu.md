@@ -31,6 +31,20 @@ Cắt mí → trẻ hóa da / nâng mũi / điều trị da · Nâng mũi → c�
 ## 4. BÁC SĨ — BẢN ĐỒ CHUYÊN MÔN (web /doi-ngu-bac-si, 22 hồ sơ, lấy 2026-10-08)
 > ⚠ **Quy tắc dùng:** chỉ nêu tên bác sĩ **đã được Kangnam duyệt quảng bá** (danh sách "10 bác sĩ"/KF-02). Web tự gắn ghi chú nội bộ cho một số hồ sơ: chưa duyệt / chưa có trong KF-02 / ảnh bằng cấp placeholder / năm KN & số ca mâu thuẫn. **Không trích số ca/giải thưởng chưa xác minh; không bịa.** Năm KN ghi theo web, có ⚠ khi mâu thuẫn.
 
+> 🔧 **Đối chiếu lại 2026-10-16 — web đã đổi sau 8 ngày.** Trang `/doi-ngu-bac-si/` nay trả danh sách **16 bác sĩ** trong khối JSON `kn-doctors-data` (+ Dr. Richard Huy giới thiệu riêng), thay vì 22 hồ sơ.
+>
+> **Năm người dưới đây KHÔNG còn trong danh sách live → ⛔ ngừng dùng ngay:**
+> `Jolie Huynh` · `Le Thi Thuy` · `Hong Vu` *(ba trang hồ sơ đã kiểm: đều trả **404**)* · `Park Phi` · `Kim (Ma Kim Thoại)` *(không còn trong danh sách)*.
+> → Rà lại kịch bản tư vấn, tin ZNS và landing đang chạy; chỗ nào nêu năm tên này phải gỡ. Đây là rào **R4**.
+>
+> **Web nay có thêm trường dùng được:** mỗi bác sĩ có `cchn` · `specTag` · `area` (HÀ NỘI / SÀI GÒN) · **`status`** · `exp` · `cases` · `photoSrc`.
+> ⚠️ **Nhưng `status: verified` của web KHÔNG phải KF-02.** Ba trường hợp đang lệch giữa web 16/10 và bảng dưới (08/10):
+> **Louis Truong** — web `verified`, bảng dưới ghi *"đã gỡ khỏi danh sách duyệt quảng bá"*.
+> **Đỗ Minh Vương** — web `verified`, bảng dưới ghi *"đã gỡ khỏi KF-02"*.
+> **Alice Tran** — web `verified`, bảng dưới ghi *"chưa trong KF-02"*.
+> Gặp lệch thì **dừng, hỏi Pháp chế** — KF-02 vẫn là cổng quyết định, web chỉ là tín hiệu.
+> Bản đối chiếu đầy đủ 17 bác sĩ kèm CCHN: [`Agent-LDP-Kangnam/knowledge/KF-01-ho-so-thuong-hieu.md`](../../Agent-LDP-Kangnam/knowledge/KF-01-ho-so-thuong-hieu.md) mục 4. Chụp lại: `python ../Agent-LDP-Kangnam/tools/fetch-du-lieu.py --chi bac_si`
+
 **Lãnh đạo chuyên môn**
 - **TS.BS Richard Huy** (20 năm) — GĐ chuyên môn hệ thống; Trưởng ekip "Hành Trình Lột Xác"; hội chẩn 3 lớp. Lĩnh vực: hàm mặt chỉnh hình & ca khó · mũi sụn sườn · nâng ngực. (⚠ ảnh `dr-vo-tien-huy.jpg` ≠ tên.)
 
@@ -43,7 +57,7 @@ Cắt mí → trẻ hóa da / nâng mũi / điều trị da · Nâng mũi → c�
 | Mark Nguyen | SG | Mắt (Plasma/6D/Perfect) + mũi cấu trúc + cấy mỡ Biofat | 10+ | CCHN 036718/HNO ⚠ meta tác giả ghi Richard Huy |
 | Daniel Nguyen (Nguyễn Đức Quỳnh) | HN | Mắt + mũi cấu trúc + cấy mỡ mặt | 9+ | Ths; CCHN 032533/HNO ⚠ số CCHN lệch trên ảnh |
 | Jason Nguyen (Nguyễn Tấn Vàng) | SG | Mũi (cấu trúc, sửa mũi hỏng) | 10+ | ĐH Y HN; ⚠ hồ sơ cần verify |
-| Park Phi (Phí Hiền Hữu) | SG | Mắt + mũi + tạo hình mặt | 15+ | CKI TMH; ⚠ tên hiển thị ≠ hồ sơ |
+| ~~Park Phi (Phí Hiền Hữu)~~ ⛔ | SG | Mắt + mũi + tạo hình mặt | 15+ | CKI TMH; ⚠ tên hiển thị ≠ hồ sơ · ⛔ **KHÔNG còn trên web 16/10/2026 — ngừng dùng** |
 | Frankie Vu (Vũ Minh Tân) | SG | Mắt + mũi (sụn sườn) | ~10 (⚠) | ⚠ **KHÔNG trong danh sách 10 duyệt quảng bá** |
 | Louis Truong | HN | Mũi + mắt | 10+ | ⚠ **đã gỡ khỏi danh sách duyệt quảng bá** |
 
@@ -64,11 +78,11 @@ Cắt mí → trẻ hóa da / nâng mũi / điều trị da · Nâng mũi → c�
 **Da liễu · Trẻ hóa**
 | Bác sĩ | CS | Lĩnh vực | Năm KN | Ghi chú |
 |---|---|---|---|---|
-| Le Thi Thuy (CKI Thủy Lê) | SG | Trưởng khoa Da liễu; Thermage FLX, Ultherapy, laser, sắc tố, sẹo rỗ | 21 | CKI Da liễu YHN ⚠ trùng tên KF-02 cần xác minh |
-| Jolie Huynh | SG | Mụn, nám, sẹo, laser/RF, tiêm (filler/botox) | 15 | Ths-CKI Da liễu PNT |
-| Kim (Ma Kim Thoại) | SG (Nguyễn Trãi) | Laser sắc tố/sẹo, căng chỉ, tiêm, trị mụn | 5+ | ĐH Y Thái Nguyên |
+| ~~Le Thi Thuy (CKI Thủy Lê)~~ ⛔ | SG | Trưởng khoa Da liễu; Thermage FLX, Ultherapy, laser, sắc tố, sẹo rỗ | 21 | CKI Da liễu YHN ⚠ trùng tên KF-02 cần xác minh · ⛔ **KHÔNG còn trên web 16/10/2026 — ngừng dùng** |
+| ~~Jolie Huynh~~ ⛔ | SG | Mụn, nám, sẹo, laser/RF, tiêm (filler/botox) | 15 | Ths-CKI Da liễu PNT · ⛔ **KHÔNG còn trên web 16/10/2026 — ngừng dùng** |
+| ~~Kim (Ma Kim Thoại)~~ ⛔ | SG (Nguyễn Trãi) | Laser sắc tố/sẹo, căng chỉ, tiêm, trị mụn | 5+ | ĐH Y Thái Nguyên · ⛔ **KHÔNG còn trên web 16/10/2026 — ngừng dùng** |
 | Alice Tran | SG | Mụn/thâm, sắc tố, phục hồi da, trẻ hóa laser/RF | 5+ | ⚠ chưa trong KF-02 |
-| Hong Vu (Vũ Thị Hồng) | SG | Sắc tố, da nhạy cảm, laser, trẻ hóa, filler | 5+ | CKI PNT ⚠ chưa trong KF-02 |
+| ~~Hong Vu (Vũ Thị Hồng)~~ ⛔ | SG | Sắc tố, da nhạy cảm, laser, trẻ hóa, filler | 5+ | CKI PNT ⚠ chưa trong KF-02 · ⛔ **KHÔNG còn trên web 16/10/2026 — ngừng dùng** |
 | Do Minh Vuong | HN | Nám (chân sâu), tàn nhang, sẹo, trẻ hóa da | 5+ (⚠ meta 7) | ⚠ đã gỡ khỏi KF-02 |
 
 ## 5. BẢNG GIÁ THAM KHẢO (web /bang-gia, cập nhật 09/2026)

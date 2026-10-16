@@ -1,5 +1,22 @@
 # CHANGELOG — AGENT FACTORY (KANGNAM)
 
+
+## Đồng bộ dữ liệu bác sĩ & cơ sở với site production — 16/10/2026
+
+Đối chiếu trực tiếp `/doi-ngu-bac-si/` · `/chi-nhanh/` · menu chính (16/10/2026). **Chỉ sửa file tri thức brand, không đụng bộ não.**
+
+**Sửa `knowledge/K4-dich-vu.md` §4 — bác sĩ.** Web đã đổi sau 8 ngày: nay trả **16 bác sĩ** trong JSON `kn-doctors-data` (+ Dr. Richard Huy giới thiệu riêng), thay vì 22 hồ sơ.
+
+⛔ **Năm bác sĩ không còn trên web — ngừng dùng ngay** (đã gạch trong bảng): `Jolie Huynh` · `Le Thi Thuy` · `Hong Vu` (ba trang hồ sơ đều trả **404**) · `Park Phi` · `Kim (Ma Kim Thoại)`.
+→ **Việc cần làm ngoài file:** rà kịch bản tư vấn, tin ZNS và landing đang chạy; chỗ nào nêu năm tên này phải gỡ. Đây là rào **R4**.
+
+⚠️ **Phát hiện: cờ `status: verified` trên web KHÔNG phải KF-02.** Ba trường hợp lệch giữa web 16/10 và bảng K4 ngày 08/10: **Louis Truong** (web verified / K4 "đã gỡ khỏi danh sách duyệt quảng bá") · **Đỗ Minh Vương** (web verified / K4 "đã gỡ khỏi KF-02") · **Alice Tran** (web verified / K4 "chưa trong KF-02"). Gặp lệch thì **dừng, hỏi Pháp chế** — KF-02 vẫn là cổng quyết định.
+
+Web nay có sẵn các trường dùng được cho R4: `cchn` · `specTag` · `area` · `status` · `exp` · `cases` · `photoSrc`.
+Bản đối chiếu đầy đủ 17 bác sĩ: `../Agent-LDP-Kangnam/knowledge/KF-01-ho-so-thuong-hieu.md` mục 4. Chụp lại: `python ../Agent-LDP-Kangnam/tools/fetch-du-lieu.py --chi bac_si`
+
+---
+
 ## v2.3 — Kịch bản tư vấn đầy đủ + agent A5 tái khai thác
 
 **Ngày:** 2026-10-10
