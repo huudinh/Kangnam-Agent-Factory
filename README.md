@@ -167,6 +167,7 @@ Agent chỉ đọc bản hiện hành → không chào nhầm ưu đãi cũ.
 | [templates/A2-qc.md](templates/A2-qc.md) | Template agent QC | ⚠ rubric v1 **đã bị K8 §6 thay thế** |
 | [templates/A3-lead-scoring.md](templates/A3-lead-scoring.md) | Template agent lead scoring | ⚠ tiêu chí v1 **đã bị K8 §3 thay thế** |
 | [templates/A4-nhac-lich.md](templates/A4-nhac-lich.md) | Template agent nhắc lịch | ✅ |
+| [goi/](goi/) | **Bản gộp dự phòng** — 2 file thay cho 13 file rời, dùng khi chạm trần số file của nền tảng | ✅ |
 | [doc/01-cai-dat.md](doc/01-cai-dat.md) | Tên & mô tả · cài 3 nền tảng · smoke test · xử lý sự cố | ✅ |
 | [doc/02-cau-lenh.md](doc/02-cau-lenh.md) | Câu lệnh 2 mode · prompt mẫu · điều Agent sẽ từ chối | ✅ |
 | [doc/03-output-mau.md](doc/03-output-mau.md) | Output mẫu cả 2 mode · dấu hiệu đúng/sai | ✅ |
