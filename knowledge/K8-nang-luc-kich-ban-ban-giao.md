@@ -20,18 +20,18 @@ Module brand-specific. Nguồn: **Playbook Trực Page Kangnam Tháng 10**. Cậ
 
 ## §1. NĂNG LỰC NHÂN SỰ & PHÂN CÔNG
 
-> ⚠️ **DỮ LIỆU NỘI BỘ.** Phần này chứa đánh giá hiệu suất của người có tên. **Tuyệt đối không xuất hiện trong bất kỳ nội dung nào gửi khách**, không đưa vào system prompt của agent tư vấn (A1). Chỉ dùng cho: phân công mentor · thiết kế đào tạo · định tuyến cặp cố định.
+> ⚠️ **DỮ LIỆU NỘI BỘ — ĐÃ MÃ HOÁ.** Phần này chứa đánh giá hiệu suất, nên nhân sự ở đây chỉ gọi bằng **mã `NV-<nhóm><số>`**. ⛔ **Bảng tra mã ↔ tên thật KHÔNG nằm trong repo** — giữ ở file nội bộ ngoài git (`ma-nhan-vien.csv`, đã chặn bằng `.gitignore`). ⛔ Không điền tên thật trở lại file này. **Tuyệt đối không xuất hiện trong bất kỳ nội dung nào gửi khách**, không đưa vào system prompt của agent tư vấn (A1). Chỉ dùng cho: phân công mentor · thiết kế đào tạo · định tuyến cặp cố định.
 
 Đánh giá **17 nhân viên** qua 3 khâu phễu: **xin số → kết nối → chốt lịch**.
 
 | Nhóm | Đặc điểm | Người | Cần học phần |
 |---|---|---|---|
-| **A — Hạt nhân (mentor)** | Mạnh, đi dạy lại | **Mai Hải Anh** (chốt lịch 53% — tốt nhất; kết nối 69% cần cải thiện) → mentor **M3** · **Nguyễn Thị Ngọc Hoa** (kết nối 78% — tốt nhất, toàn phễu cân bằng) → mentor **M2** · **Đặng Thị Liên** (ổn định cả 3 khâu) → chuẩn hoá quy trình | — |
-| **B — Chốt lịch yếu** | Xin số tốt 42–47%, chốt lịch chỉ 40–45% | Nguyễn Văn Thành · Nguyễn Thị Hoài Linh · Kiều Thị Hương · Đặng Thị Thu Hương · Nguyễn Thị Mai · Trương Mỹ Thùy Linh | **M3** |
-| **C — Kết nối yếu** | Kết nối 69–71%, dao động mạnh | Ngô Minh Ngọc · Cà Thị Thắm · Nguyễn Thị Hồng Lương · Trần Mỹ Chung | **M2** (xác thực số) |
-| **D — Xin số yếu / tân binh** | Vũ Thị Linh Trang xin số 33% (thấp nhất) · Trương Tuyết Nhi và Hoàng Mỹ Linh là tân binh | | **M1**, tân binh kèm cả **M1–M3** |
+| **A — Hạt nhân (mentor)** | Mạnh, đi dạy lại | **NV-A1** (chốt lịch 53% — tốt nhất; kết nối 69% cần cải thiện) → mentor **M3** · **NV-A2** (kết nối 78% — tốt nhất, toàn phễu cân bằng) → mentor **M2** · **NV-A3** (ổn định cả 3 khâu) → chuẩn hoá quy trình | — |
+| **B — Chốt lịch yếu** | Xin số tốt 42–47%, chốt lịch chỉ 40–45% | NV-B1 · NV-B2 · NV-B3 · NV-B4 · NV-B5 · NV-B6 | **M3** |
+| **C — Kết nối yếu** | Kết nối 69–71%, dao động mạnh | NV-C1 · NV-C2 · NV-C3 · NV-C4 | **M2** (xác thực số) |
+| **D — Xin số yếu / tân binh** | NV-D1 xin số 33% (thấp nhất) · NV-D2 và NV-D3 là tân binh | | **M1**, tân binh kèm cả **M1–M3** |
 
-> **Hoàng Mỹ Linh:** đánh giá kết thúc thử việc nếu không đạt 11% sau 2 tuần.
+> **NV-D3:** đánh giá kết thúc thử việc nếu không đạt 11% sau 2 tuần.
 
 **Cách Factory dùng dữ liệu này:** chỉ để trả lời câu hỏi về **thiết kế đào tạo** và **định tuyến**. Khi sinh agent, dữ liệu này **không được nhúng vào system prompt** — agent con không cần biết ai yếu khâu nào.
 

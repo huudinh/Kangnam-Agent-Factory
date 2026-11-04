@@ -13,3 +13,9 @@ __pycache__/
 # Chan tat ca theo mac dinh. File nao an toan thi copy sang doc/mau-du-lieu/ roi commit
 # ban do - dung mo cua o day, de lan sau tha file co ten khach vao khong bi lot.
 output/
+
+# Bang tra ma nhan vien <-> ten that (K8 §1) - KHONG commit.
+# K8 chi ghi ma NV-<nhom><so>; ten that o day va chi o day.
+ma-nhan-vien.csv
+ma-nhan-vien.json
+ma-nhan-vien.xlsx
